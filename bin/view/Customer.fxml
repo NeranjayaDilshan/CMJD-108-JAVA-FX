@@ -10,15 +10,15 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
    <children>
       <Label alignment="TOP_CENTER" layoutX="318.0" layoutY="27.0" text="Customer Form">
          <font>
             <Font size="38.0" />
          </font>
       </Label>
-      <TextField layoutX="52.0" layoutY="110.0" prefHeight="38.0" prefWidth="362.0" promptText="ID" />
-      <TextField layoutX="52.0" layoutY="189.0" prefHeight="38.0" prefWidth="781.0" promptText="Name" />
+      <TextField fx:id="txtId" layoutX="52.0" layoutY="110.0" prefHeight="38.0" prefWidth="362.0" promptText="ID" />
+      <TextField fx:id="txtName" layoutX="52.0" layoutY="189.0" prefHeight="38.0" prefWidth="781.0" promptText="Name" />
       <Label layoutX="52.0" layoutY="91.0" text="ID">
          <font>
             <Font name="Georgia Bold" size="16.0" />
@@ -34,13 +34,13 @@
             <Font name="Georgia Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="471.0" layoutY="110.0" prefHeight="38.0" prefWidth="362.0" promptText="Title" />
+      <TextField fx:id="txtTitle" layoutX="471.0" layoutY="110.0" prefHeight="38.0" prefWidth="362.0" promptText="Title" />
       <Label layoutX="52.0" layoutY="243.0" text="Address">
          <font>
             <Font name="Georgia Bold" size="16.0" />
          </font>
       </Label>
-      <TextArea layoutX="52.0" layoutY="262.0" prefHeight="75.0" prefWidth="781.0" promptText="Address" />
+      <TextArea fx:id="txtAddress" layoutX="52.0" layoutY="262.0" prefHeight="75.0" prefWidth="781.0" promptText="Address" />
       <TableView layoutX="52.0" layoutY="415.0" prefHeight="303.0" prefWidth="775.0">
         <columns>
           <TableColumn prefWidth="75.0" text="ID" />
@@ -49,7 +49,15 @@
             <TableColumn prefWidth="379.0" text="Address" />
         </columns>
       </TableView>
-      <Button layoutX="722.0" layoutY="358.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: green;" text="Save" textFill="WHITE" />
-      <Button layoutX="597.0" layoutY="358.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" />
+      <Button layoutX="722.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="597.0" layoutY="358.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
