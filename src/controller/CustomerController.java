@@ -36,7 +36,7 @@ public class CustomerController {
         System.out.println("name : "+name);
         System.out.println("address : "+address);
         System.out.println("title : "+title); 
-
+        
         System.out.println("Customer Save Button is working fine");
     }
 }
