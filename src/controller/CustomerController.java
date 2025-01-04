@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import service.ServiceFactory;
 import service.custom.CustomerService;
 
@@ -67,14 +68,23 @@ public class CustomerController {
     @FXML
     private TableView<CustomerDto> tblCustomer;
 
-    public void initialize()throws Exception {
+    public void initialize() throws Exception {
         System.out.println("First Method");
         getAllCustomer();
+
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        colCity.setCellValueFactory(new PropertyValueFactory<>("city"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+
+
     }
 
-    public void getAllCustomer() throws Exception{
+    public void getAllCustomer() throws Exception {
         ArrayList<CustomerDto> all = customerService.getAll();
-
+        System.out.println(all);
         ObservableList<CustomerDto> observableArrayList = FXCollections.observableArrayList();
         observableArrayList.addAll(all);
         tblCustomer.setItems(observableArrayList);

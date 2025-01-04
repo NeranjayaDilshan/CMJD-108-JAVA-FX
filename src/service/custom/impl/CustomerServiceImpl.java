@@ -26,8 +26,17 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public ArrayList<CustomerDto> getAll() throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAll'");
+        ArrayList<CustomerDto> customerDtos = new ArrayList<>();
+        ArrayList<CustomerEntity> customerEntitys = customerDao.getAll();
+        for (CustomerEntity customerEntity : customerEntitys) {
+            CustomerDto dto = new CustomerDto(customerEntity.getId(),
+                    customerEntity.getTitle(), customerEntity.getName(),
+                    customerEntity.getDob(), 
+                    customerEntity.getSalary(), customerEntity.getAddress(), customerEntity.getCity(),
+                    customerEntity.getProvince(), customerEntity.getPostalCode());
+            customerDtos.add(dto);
+        }
+        return customerDtos;
     }
 
 }
