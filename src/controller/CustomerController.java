@@ -5,8 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import service.ServiceFactory;
+import service.custom.CustomerService;
 
 public class CustomerController {
+
+    CustomerService customerService = (CustomerService) ServiceFactory.getInstance()
+            .getService(ServiceFactory.ServiceType.CUSTOMER);
 
     @FXML
     private TextArea txtAddress;
@@ -41,13 +46,13 @@ public class CustomerController {
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
+    void btnSaveOnAction(ActionEvent event) throws Exception {
 
         String id = txtId.getText();
         String name = txtName.getText();
         String address = txtAddress.getText();
         String title = txtTitle.getText();
-        Double salary = Double.parseDouble(txtSalary.getText()) ;
+        Double salary = Double.parseDouble(txtSalary.getText());
         String city = txtcity.getText();
         String province = txtprovince.getText();
         String postalcode = txtPostalCode.getText();
@@ -58,9 +63,9 @@ public class CustomerController {
         System.out.println("address : " + address);
         System.out.println("title : " + title);
 
-        CustomerDto customerDto = new CustomerDto(id,title,name,dob,salary,address,city,province,postalcode);
+        CustomerDto customerDto = new CustomerDto(id, title, name, dob, salary, address, city, province, postalcode);
         System.out.println(customerDto);
-
+        String save = customerService.save(customerDto);
         System.out.println("Customer Save Button is working fine");
     }
 }
