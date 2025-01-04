@@ -50,12 +50,14 @@
             </ContextMenu>
          </contextMenu>
       </TextArea>
-      <TableView layoutX="52.0" layoutY="512.0" prefHeight="303.0" prefWidth="775.0">
+      <TableView fx:id="tblCustomer" layoutX="52.0" layoutY="512.0" prefHeight="303.0" prefWidth="775.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="96.0" text="Title" />
-            <TableColumn prefWidth="224.0" text="Name" />
-            <TableColumn prefWidth="379.0" text="Address" />
+          <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colTitle" prefWidth="96.0" text="Title" />
+            <TableColumn fx:id="colName" prefWidth="161.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="193.0" text="Address" />
+            <TableColumn fx:id="colSalary" prefWidth="125.0" text="Salary" />
+            <TableColumn fx:id="colCity" prefWidth="122.0" text="City" />
         </columns>
       </TableView>
       <Button layoutX="722.0" layoutY="438.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">

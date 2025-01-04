@@ -1,8 +1,14 @@
 package controller;
 
+import java.util.ArrayList;
+
 import dto.CustomerDto;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import service.ServiceFactory;
@@ -39,6 +45,40 @@ public class CustomerController {
 
     @FXML
     private TextField txtprovince;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colAddress;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colCity;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colId;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colName;
+
+    @FXML
+    private TableColumn<CustomerDto, Double> colSalary;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colTitle;
+
+    @FXML
+    private TableView<CustomerDto> tblCustomer;
+
+    public void initialize()throws Exception {
+        System.out.println("First Method");
+        getAllCustomer();
+    }
+
+    public void getAllCustomer() throws Exception{
+        ArrayList<CustomerDto> all = customerService.getAll();
+
+        ObservableList<CustomerDto> observableArrayList = FXCollections.observableArrayList();
+        observableArrayList.addAll(all);
+        tblCustomer.setItems(observableArrayList);
+    }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {

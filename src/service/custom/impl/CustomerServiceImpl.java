@@ -1,5 +1,7 @@
 package service.custom.impl;
 
+import java.util.ArrayList;
+
 import dao.DaoFactory;
 import dao.custom.CustomerDao;
 import dto.CustomerDto;
@@ -20,6 +22,12 @@ public class CustomerServiceImpl implements CustomerService {
                 customerDto.getAddress(), customerDto.getCity(),
                 customerDto.getProvince(), customerDto.getPostalCode());
         return customerDao.save(customerEntity) ? "Success" : "Fail";
+    }
+
+    @Override
+    public ArrayList<CustomerDto> getAll() throws Exception {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAll'");
     }
 
 }
