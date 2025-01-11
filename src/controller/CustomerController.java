@@ -81,6 +81,14 @@ public class CustomerController {
 
         tblCustomer.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             System.out.println("Table Row Click");
+            System.out.println("oldSelection : "+oldSelection);
+            System.out.println("=============");
+            System.out.println("newSelection : "+newSelection);
+            if(newSelection !=null){
+                txtId.setText(newSelection.getId());
+                txtTitle.setText(newSelection.getTitle());
+                txtName.setText(newSelection.getName());
+            }
         });
 
     }
