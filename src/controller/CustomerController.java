@@ -88,6 +88,12 @@ public class CustomerController {
                 txtId.setText(newSelection.getId());
                 txtTitle.setText(newSelection.getTitle());
                 txtName.setText(newSelection.getName());
+                txtAddress.setText(newSelection.getAddress());
+                txtDob.setText(newSelection.getDob());
+                txtSalary.setText(Double.toString(newSelection.getSalary()));
+                txtcity.setText(newSelection.getCity());
+                txtPostalCode.setText(newSelection.getPostalCode());
+                txtprovince.setText(newSelection.getProvince());
             }
         });
 
