@@ -6,7 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class MainController {
 
@@ -16,9 +18,13 @@ public class MainController {
     @FXML
     void btnCustomerOnAction(ActionEvent event) throws IOException {
         System.out.println("Customer Button clicked");
-        root.getChildren().clear();
-        Parent node = FXMLLoader.load(getClass().getResource("../view/Customer.fxml"));
-        root.getChildren().add(node);
+        // root.getChildren().clear();
+        // Parent node = FXMLLoader.load(getClass().getResource("../view/Customer.fxml"));
+        // root.getChildren().add(node);
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/Customer.fxml"))));
+        stage.show();
     }
 
     @FXML
