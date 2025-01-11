@@ -79,6 +79,9 @@ public class CustomerController {
         colCity.setCellValueFactory(new PropertyValueFactory<>("city"));
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
 
+        tblCustomer.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            System.out.println("Table Row Click");
+        });
 
     }
 
