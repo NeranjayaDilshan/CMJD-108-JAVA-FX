@@ -28,12 +28,18 @@ public class MainController {
     }
 
     @FXML
-    void btnItemOnAction(ActionEvent event) {
+    void btnItemOnAction(ActionEvent event) throws IOException {
         System.out.println("Item Button clicked");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/Item.fxml"))));
+        stage.show();
     }
 
     @FXML
-    void btnOrdersOnAction(ActionEvent event) {
+    void btnOrdersOnAction(ActionEvent event) throws IOException {
         System.out.println("Orders Button clicked");
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/Orders.fxml"))));
+        stage.show();
     }
 }
